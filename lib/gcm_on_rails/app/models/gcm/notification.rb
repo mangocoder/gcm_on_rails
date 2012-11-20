@@ -44,7 +44,7 @@ class Gcm::Notification < Gcm::Base
             logger.info "notification = #{notification.inspect}"
             response = Gcm::Connection.send_notification(notification, api_key, format)
             logger.info "response = #{response.inspect}"
-
+            puts response
             if response[:code] == 200
               if response[:message].nil?
                 # TODO - Making this assumption might not be right. HTTP status code 200 does not really signify success
