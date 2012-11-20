@@ -21,11 +21,11 @@ module Gcm
           extra_data = "registration_id=#{notification.data[:registration_ids][0]}"
           extra_data = "#{extra_data}&collapse_key=#{notification.collapse_key}" unless notification.collapse_key.nil?
           extra_data = "#{extra_data}&delay_while_idle=1" if notification.delay_while_idle
-          data = "#{extra_data}#{post_data}"
+         puts data = "#{extra_data}#{post_data}"
         end
 
-        url_string = configatron.gcm_on_rails.api_url
-        url = URI.parse url_string
+       puts url_string = configatron.gcm_on_rails.api_url
+        puts url = URI.parse url_string
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
