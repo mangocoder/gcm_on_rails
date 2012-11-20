@@ -9,10 +9,10 @@ module Gcm
           headers = {"Content-Type" => "application/json",
                      "Authorization" => "key=#{api_key}"}
 
-          data = notification.data.merge({:collapse_key => notification.collapse_key}) unless notification.collapse_key.nil?
-          data = data.merge({:delay_while_idle => notification.delay_while_idle}) unless notification.delay_while_idle.nil?
-          data = data.merge({:time_to_live => notification.time_to_live}) unless notification.time_to_live.nil?
-          data = data.to_json
+         puts data = notification.data.merge({:collapse_key => notification.collapse_key}) unless notification.collapse_key.nil?
+          puts data = data.merge({:delay_while_idle => notification.delay_while_idle}) unless notification.delay_while_idle.nil?
+          puts data = data.merge({:time_to_live => notification.time_to_live}) unless notification.time_to_live.nil?
+          puts data = data.to_json
         else   #plain text format
           headers = {"Content-Type" => "application/x-www-form-urlencoded;charset=UTF-8",
                      "Authorization" => "key=#{api_key}"}
