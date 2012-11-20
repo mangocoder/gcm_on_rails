@@ -25,7 +25,7 @@ module Gcm
         end
 
        puts url_string = configatron.gcm_on_rails.api_url
-        puts url = URI.parse url_string
+         url = URI.parse url_string
         http = Net::HTTP.new(url.host, url.port)
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
